@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "outDir": "js"
+  },
+  "skipLibCheck": true,
+  "files": ["src/index.ts"]
+}
