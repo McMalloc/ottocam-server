@@ -67,6 +67,13 @@ app.post('/readings', json, (req, res) => {
   res.send("ok")
 });
 
+app.get('/readings', (req, res) => {
+  const results = db.exec(`
+    SELECT * FROM readings;
+  `)
+  res.send(results);
+});
+
 app.listen(port, () => {
   console.log(`[server]: Server is running at https://localhost:${port}`);
 });
