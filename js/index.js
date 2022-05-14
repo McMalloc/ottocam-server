@@ -65,6 +65,14 @@ app.post('/readings', json, (req, res) => {
   `);
     res.send("ok");
 });
+app.get('/readings', (req, res) => {
+    db.all(`
+    SELECT * FROM readings;
+  `, (error, results) => {
+        console.log(results);
+        res.json(results);
+    });
+});
 app.listen(port, () => {
     console.log(`[server]: Server is running at https://localhost:${port}`);
 });

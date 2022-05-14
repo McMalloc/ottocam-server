@@ -68,10 +68,13 @@ app.post('/readings', json, (req, res) => {
 });
 
 app.get('/readings', (req, res) => {
-  const results = db.exec(`
+  db.all(`
     SELECT * FROM readings;
-  `)
-  res.send(results);
+  `, (error, results) => {
+    console.log(results);
+    
+    res.json(results)
+  });
 });
 
 app.listen(port, () => {
